@@ -1,23 +1,27 @@
-<form>
+Conteudo form : {{clienteForm.value | json}}
+
+Form valido : {{clienteForm.valid | json}}
+
+<form  [formGroup]="clienteForm" (ngSubmit)="submitFormCliente()">
     <div>
         <label>Nome </label>
-        <input type="text" name="nome">
+        <input type="text" name="nome" formControlName="nome">
     </div>
 
     <div>
         <label>CPF </label>
-        <input type="text" name="cpf">
+        <input type="text" name="cpf" formControlName="cpf">
     </div>
 
     <div>
         <label>Situação Serasa </label>
         <select>
-            <option>Com pendência</option>
-            <option>Sem pendência</option>
+            <option>com pendência</option>
+            <option>sem pendência</option>
         </select>
     </div>
 
     <div>
-        <button type="submit">Salvar</button>
+        <button type="submit" [disabled]="clienteForm.invalid">Salvar</button>
     </div>
 </form>
