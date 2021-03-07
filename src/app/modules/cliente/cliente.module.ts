@@ -3,24 +3,25 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ClienteService } from './cliente.service';
-import { ClienteComponent } from './cliente.component';
+
 
 import {InputTextModule} from 'primeng/inputtext';
+import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
+import { ClienteRoutingModule } from './cliente-routing.module';
 
 @NgModule({
   declarations: [
-    ClienteComponent
+    CadastroClienteComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    InputTextModule
+    InputTextModule,
+    ClienteRoutingModule
   ],
   providers : [
     ClienteService
   ],
-  exports : [
-    ClienteComponent
-  ]
+  exports : []
 })
 export class ClienteModule { }

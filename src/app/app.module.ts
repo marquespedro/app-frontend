@@ -4,9 +4,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ClienteRoutingModule } from './modules/cliente/cliente-routing.module';
+import { ClienteModule } from './modules/cliente/cliente.module';
 
-import { ClienteRoutingModule } from './cliente/cliente-routing.module';
-import { ClienteModule } from './cliente/cliente.module';
+
 
 @NgModule({
   declarations: [

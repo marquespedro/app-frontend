@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cliente',
-  templateUrl: './cliente.component.html',
-  styleUrls: ['./cliente.component.css']
+  selector: 'app-cadastro-cliente',
+  templateUrl: './cadastro-cliente.component.html',
+  styleUrls: ['./cadastro-cliente.component.css']
 })
-export class ClienteComponent implements OnInit {
+export class CadastroClienteComponent implements OnInit {
 
   clienteForm: FormGroup = this.configurarFormCliente();
 

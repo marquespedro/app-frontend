@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClienteComponent } from './cliente.component';
+import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 
 const routes: Routes = [  
-  {path: 'cliente', component: ClienteComponent }
+  {path: 'cadastrar', component: CadastroClienteComponent }
 ];
 
 @NgModule({
