@@ -2,26 +2,24 @@ Conteudo form : {{clienteForm.value | json}}
 
 Form valido : {{clienteForm.valid | json}}
 
-<form  [formGroup]="clienteForm" (ngSubmit)="submitFormCliente()">
-    <div>
-        <label>Nome </label>
-        <input type="text" name="nome" formControlName="nome">
-    </div>
+<div class="card">
+    <form [formGroup]="clienteForm" (ngSubmit)="submitFormCliente()">
+        <div class="p-fluid p-formgrid p-grid">
 
-    <div>
-        <label>CPF </label>
-        <input type="text" name="cpf" formControlName="cpf">
-    </div>
+            <input type="hidden" formControlName="id">
 
-    <div>
-        <label>Situação Serasa </label>
-        <select>
-            <option>com pendência</option>
-            <option>sem pendência</option>
-        </select>
-    </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label for="nome">Nome</label>
+                <input formControlName="nome" type="text" pInputText>
+            </div>
 
-    <div>
-        <button type="submit" [disabled]="clienteForm.invalid">Salvar</button>
-    </div>
-</form>
+            <div class="p-field p-col-12 p-md-6">
+                <label for="cpf">CPF</label>
+                <input formControlName="cpf" type="text" pInputText>
+            </div>
+
+            <app-cadastro-endereco formControlName="endereco"></app-cadastro-endereco>
+
+        </div>
+    </form>
+</div>

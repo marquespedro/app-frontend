@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="p-fluid p-formgrid p-grid">
+        <form [formGroup]="enderecoForm">
+
+            <input type="hidden" formControlName="id">
+
+            <div class="p-field p-col-12 p-md-6">
+                <label for="cep">Cep</label>
+                <input formControlName="cep" type="text" pInputText>
+            </div>
+
+            <div class="p-field p-md-6">
+                <label for="bairro">Bairro</label>
+                <input formControlName="bairro" type="text" pInputText>
+            </div>
+
+            <div class="p-field p-col-12">
+                <label for="numero">Número</label>
+                <input formControlName="numero" type="text" pInputText>
+            </div>
+
+            <div class="p-field p-col-12">
+                <label for="complemento">Complemento</label>
+                <input formControlName="complemento" type="text" pInputText>
+            </div>
+            
+        </form>
+    </div>
+</div>

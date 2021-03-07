@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ControlValueAccessor, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Endereco } from 'src/app/model/endereco-model';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -9,24 +10,26 @@ import { Router } from '@angular/router';
 })
 export class CadastroClienteComponent implements OnInit {
 
+  enderecoCliente: Endereco = new Endereco();
+
   clienteForm: FormGroup = this.configurarFormCliente();
 
-  constructor(
-      private formBuilder: FormBuilder,
-      private router:Router
-    ) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+
   configurarFormCliente() {
-   return this.clienteForm = this.formBuilder.group({
+    return this.clienteForm = this.formBuilder.group({
+      id: [''],
       nome: ['', [Validators.required, Validators.minLength(3)]],
-      cpf: ['', [Validators.required,  Validators.minLength(11) , Validators.maxLength(11)]]
+      cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+      endereco: [, []]
     });
   }
 
-  submitFormCliente(){
+  submitFormCliente() {
     console.log('formulario : ', this.clienteForm.value);
   }
 }
