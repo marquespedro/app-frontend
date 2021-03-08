@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Cliente } from 'src/app/model/cliente-model';
 import { Endereco } from 'src/app/model/endereco-model';
+import { PessoaFisica } from 'src/app/model/pessoa-fisica-model';
 import { ClienteService } from '../cliente.service';
 
 @Component({
@@ -11,7 +13,8 @@ import { ClienteService } from '../cliente.service';
 })
 export class CadastroClienteComponent implements OnInit {
 
-  enderecoCliente: Endereco = new Endereco();
+
+  cliente: Cliente = new Cliente();
 
   clienteForm: FormGroup = this.configurarFormCliente();
 
@@ -25,17 +28,26 @@ export class CadastroClienteComponent implements OnInit {
 
   configurarFormCliente() {
     return this.clienteForm = this.formBuilder.group({
-      id: [''],
-      nome: ['', [Validators.required, Validators.minLength(3)]],
-      cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+      id: [null,''],
+      pessoaFisica: ['', [Validators.required, Validators.minLength(3)]],
       endereco: [, []]
     });
   }
 
   submitFormCliente() {
-    console.log('formulario : ', this.clienteForm.value);
+
+ 
     this.clienteService.salvar(this.clienteForm.value).subscribe(response => {
       alert('cliente salvo com sucesso');
     });
   }
+
+  get getCpf() {
+    return this.clienteForm.get('cpf');
+  }
+
+  get getNome() {
+    return this.clienteForm.get('nome');
+  }
+
 }

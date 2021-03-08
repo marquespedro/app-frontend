@@ -8,15 +8,7 @@ Form valido : {{clienteForm.valid | json}}
 
             <input type="hidden" formControlName="id">
 
-            <div class="p-field p-col-12 p-md-6">
-                <label for="nome">Nome</label>
-                <input formControlName="nome" type="text" pInputText>
-            </div>
-
-            <div class="p-field p-col-12 p-md-6">
-                <label for="cpf">CPF</label>
-                <input formControlName="cpf" type="text" pInputText>
-            </div>
+            <app-pessoa-fisica formControlName="pessoaFisica"></app-pessoa-fisica>
 
             <app-cadastro-endereco formControlName="endereco"></app-cadastro-endereco>
 

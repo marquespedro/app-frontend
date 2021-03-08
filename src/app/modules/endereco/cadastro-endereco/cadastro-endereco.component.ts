@@ -18,7 +18,7 @@ import { Endereco } from 'src/app/model/endereco-model';
 export class CadastroEnderecoComponent implements OnInit, ControlValueAccessor {
 
   @Input() enderecoForm = new FormGroup({
-    id: new FormControl("", [Validators.required]),
+    id: new FormControl(null, [Validators.required]),
     cep: new FormControl("", [Validators.required]),
     bairro: new FormControl("", [Validators.required]),
     complemento: new FormControl("", [Validators.required]),

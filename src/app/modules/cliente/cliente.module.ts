@@ -12,11 +12,14 @@ import {InputTextModule} from 'primeng/inputtext';
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { ClienteRoutingModule } from './cliente-routing.module';
 import { ButtonModule } from 'primeng/button';
+import { PessoaFisicaComponent } from './pessoa-fisica/pessoa-fisica.component';
+
 
 
 @NgModule({
   declarations: [
-    CadastroClienteComponent
+    CadastroClienteComponent,
+    PessoaFisicaComponent
   ],
   imports: [
     CommonModule,
