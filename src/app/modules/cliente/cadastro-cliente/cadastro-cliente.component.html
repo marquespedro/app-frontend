@@ -20,6 +20,9 @@ Form valido : {{clienteForm.valid | json}}
 
             <app-cadastro-endereco formControlName="endereco"></app-cadastro-endereco>
 
+            <button pButton type="submit" label="Salvar" [disabled]="clienteForm.invalid"></button>
         </div>
+
+
     </form>
 </div>

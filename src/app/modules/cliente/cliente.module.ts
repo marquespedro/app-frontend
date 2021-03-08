@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -9,6 +11,7 @@ import { EnderecoModule } from '../endereco/endereco.module';
 import {InputTextModule} from 'primeng/inputtext';
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { ClienteRoutingModule } from './cliente-routing.module';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -19,9 +22,12 @@ import { ClienteRoutingModule } from './cliente-routing.module';
     CommonModule,
     ReactiveFormsModule,
     InputTextModule,
+    ButtonModule,
     ClienteRoutingModule,
     EnderecoModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   providers : [
     ClienteService

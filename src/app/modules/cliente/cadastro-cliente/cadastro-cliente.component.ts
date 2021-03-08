@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Endereco } from 'src/app/model/endereco-model';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -14,7 +15,9 @@ export class CadastroClienteComponent implements OnInit {
 
   clienteForm: FormGroup = this.configurarFormCliente();
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder,
+    private router: Router,
+    private clienteService: ClienteService) { }
 
   ngOnInit(): void {
   }
@@ -31,5 +34,8 @@ export class CadastroClienteComponent implements OnInit {
 
   submitFormCliente() {
     console.log('formulario : ', this.clienteForm.value);
+    this.clienteService.salvar(this.clienteForm.value).subscribe(response => {
+      alert('cliente salvo com sucesso');
+    });
   }
 }
