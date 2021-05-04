@@ -1,0 +1,13 @@
+<label>o nome de usuario :</label>
+<input [(ngModel)]="usuario" [disabled]="desabilitarCampoUsuario">
+<button (click)="criarConexao()" [disabled]="desabilitarBotaoConectar">conectar</button>
+<div *ngIf="usuario">
+    <label>Informe um texto : </label>
+    <div>
+        <textarea [(ngModel)]="mensagemEnviar" 
+                  style="width: 250px; height: 100px;" 
+                  (click)="verificaSeTemUsuario()"></textarea>
+    </div>
+
+    <button (click)="enviarMensagem()"> enviar </button>
+</div>

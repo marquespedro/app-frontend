@@ -7,19 +7,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClienteRoutingModule } from './modules/cliente/cliente-routing.module';
 import { ClienteModule } from './modules/cliente/cliente.module';
+import { ChatComponent } from './chat/chat/chat.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,  
     AppRoutingModule,
     ClienteModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
